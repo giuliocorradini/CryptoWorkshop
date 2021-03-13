@@ -21,6 +21,7 @@ class DHExchangeStream:
     def alice_behaviour(self):
         x = self.actor.generate_public()
         self.wstream.write(f"{self.actor.n},{self.actor.r},{x}\n")
+        self.wstream.flush()
 
         try:
             y = int(self.rstream.readline())
@@ -39,6 +40,7 @@ class DHExchangeStream:
 
         y = self.actor.generate_public()
         self.wstream.write(f"{y}\n")
+        self.wstream.flush()
 
         shared = self.actor.complete_key(x)
         return shared
