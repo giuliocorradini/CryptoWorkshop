@@ -34,4 +34,4 @@ that are coprime with 4 (n) are 1 and 3.
 #### Implementation
 We offer a routine to compute Euler's totient for a given number.
 
-The code is under `maths/totient.py`
+The code is under `cryptow/maths/totient.py`
